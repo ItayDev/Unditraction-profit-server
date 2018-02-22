@@ -51,4 +51,8 @@ router.put('/increase', async (req, res, next) => {
     }
 });
 
+router.get('/test', (req, res, next) => {
+    res.send("It is up!");
+})
+
 module.exports = router;
