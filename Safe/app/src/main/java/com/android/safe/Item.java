@@ -3,6 +3,9 @@ import android.graphics.drawable.Drawable;
 
 public class Item
 {
+    private String description;
+    private int price;
+    private String vendor;
     String title;
     Drawable image;
 
@@ -18,6 +21,16 @@ public class Item
         super();
         this.title = title;
         this.image = image;
+    }
+
+    public Item(String title, String desc, int price, String vendor, Drawable image)
+    {
+        super();
+        this.title = title;
+        this.image = image;
+        this.vendor = vendor;
+        this.price = price;
+        this.description = desc;
     }
 
     // Getter and Setter Method
@@ -41,5 +54,17 @@ public class Item
         this.image = image;
     }
 
+    public String getDescription()
+    {
+        return description;
+    }
+    public String getVendor()
+    {
+        return vendor;
+    }
+    public int getPrice()
+    {
+        return price;
+    }
 
 }

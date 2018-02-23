@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -33,7 +34,7 @@ public class UpdateServiceSec extends IntentService implements GoogleApiClient.O
     private LocationRequest mLocationRequest;
     private static final long INTERVAL = 1000 * 10; // of getting information from google
     private static final long FASTEST_INTERVAL = 1000 * 5; // of getting information from google
-    static Location loc = null;
+    static Location prevLoc = null;
 
     /**
      * the constructor of this class, use the parent constructor with
@@ -123,7 +124,13 @@ public class UpdateServiceSec extends IntentService implements GoogleApiClient.O
      */
     @Override
     public void onLocationChanged(final Location location) {
-        loc = location;
+        if (prevLoc != null) {
+            float diff = prevLoc.distanceTo(location);
+            if (diff > 15/3600) {
+                Toast.makeText(getApplicationContext(), "Driving" , Toast.LENGTH_SHORT).show();
+            }
+        }
+        prevLoc = location;
         // new LatLng(loc.getLatitude(), loc.getLongitude());
     }
 

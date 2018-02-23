@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:id="@+id/swipe_right">
 
     <GridView
         android:id="@+id/gridView"
@@ -21,8 +22,8 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp">
+        android:layout_marginTop="112dp"
+        android:layout_alignParentStart="true">
     </GridView>
 
     <TextView
