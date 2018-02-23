@@ -1,5 +1,5 @@
 let mongoose = require("mongoose")
-const configuration = require("../Configurations/Mongo.config");
+const configuration = require("../configurations/Mongo.config");
 
 module.exports = class MongoConnection{
 
