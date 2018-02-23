@@ -6,6 +6,7 @@ let router = express.Router();
 router.get('/', async (req, res, next) => {
     try {
         let result = await benefit.find({});
+        res.status(200).send(result);
     } catch(ex) {
         res.status(500).send("error in /");
     }
